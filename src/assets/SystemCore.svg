@@ -1,0 +1,29 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="core-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"></feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="coloredBlur"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+    <linearGradient id="core-gradient" gradientTransform="rotate(45)">
+      <stop offset="0%" stop-color="#7F00FF" />
+      <stop offset="100%" stop-color="#00D1FF" />
+    </linearGradient>
+  </defs>
+  <g filter="url(#core-glow)" style="transform-origin: center; animation: svg-rotate 25s linear infinite;">
+    <circle cx="100" cy="100" r="90" stroke="url(#core-gradient)" stroke-width="1.5" fill="none" opacity="0.6"/>
+    <circle cx="100" cy="100" r="75" stroke="url(#core-gradient)" stroke-width="1" fill="none" opacity="0.4"/>
+    <path d="M100 30 L152 70 L152 130 L100 170 L48 130 L48 70 Z" 
+          stroke="#00D1FF" stroke-width="3" fill="rgba(0, 209, 255, 0.1)" />
+    <path d="M100 50 L135 70 L135 130 L100 150 L65 130 L65 70 Z"
+          stroke="#7F00FF" stroke-width="1.5" fill="none" />
+  </g>
+  <style>
+    @keyframes svg-rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</svg>

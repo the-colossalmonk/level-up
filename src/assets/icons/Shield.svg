@@ -1,0 +1,41 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Radial glow gradient -->
+    <radialGradient id="g-shield" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#6cf" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#001" stop-opacity="0.9"/>
+    </radialGradient>
+
+    <!-- Outer glow for shield edge -->
+    <filter id="shield-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#0ff" flood-opacity="0.4"/>
+    </filter>
+
+    <!-- Core orb glow -->
+    <radialGradient id="core-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0ff" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Main shield body -->
+  <path 
+    d="M32 4 L56 16 L48 52 L32 60 L16 52 L8 16 Z" 
+    fill="url(#g-shield)" 
+    stroke="#0ff" 
+    stroke-width="1.5" 
+    filter="url(#shield-glow)"
+  />
+
+  <!-- Internal glowing rune lines -->
+  <line x1="32" y1="10" x2="32" y2="54" stroke="#0ff" stroke-opacity="0.1" stroke-width="1"/>
+  <line x1="20" y1="22" x2="44" y2="22" stroke="#0ff" stroke-opacity="0.08" stroke-width="1"/>
+  <line x1="18" y1="34" x2="46" y2="34" stroke="#0ff" stroke-opacity="0.06" stroke-width="1"/>
+  <line x1="22" y1="44" x2="42" y2="44" stroke="#0ff" stroke-opacity="0.05" stroke-width="1"/>
+
+  <!-- Core orb glow -->
+  <circle cx="32" cy="34" r="8" fill="url(#core-glow)" />
+
+  <!-- Core gem/orb -->
+  <circle cx="32" cy="34" r="4" fill="#000" stroke="#0ff" stroke-width="1.2"/>
+</svg>
