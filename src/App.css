@@ -377,12 +377,38 @@ p,
 }
 
 /* Testimonials Section */
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+.testimonials-scroller {
+  max-width: 100%;
+  overflow: hidden; /* This hides the content that is outside the viewport */
+  /* This creates a soft edge on the sides for a fading effect */
+  -webkit-mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+  mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
 }
+
+.testimonials-track {
+  display: flex;
+  gap: 30px;
+  width: max-content; /* Allows the track to be as wide as its content */
+  /* The animation itself */
+  animation: scroll 40s linear infinite;
+}
+
+.testimonials-track:hover {
+  animation-play-state: paused; /* Pauses the scroll on hover */
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* This translates the track to the left by the width of the first set of testimonials */
+    transform: translateX(calc(-100% / 2));
+  }
+}
+
 .testimonial-card {
+  flex: 0 0 320px; /* Prevents cards from shrinking. Adjust width as needed. */
   background: var(--card-bg);
   border: 1px solid var(--border-glow);
   padding: 30px;
@@ -390,12 +416,19 @@ p,
   display: flex;
   flex-direction: column;
 }
+
 .testimonial-quote {
+  font-family: 'Cinzel', serif;
+  color: var(--text-secondary);
+  line-height: 1.7;
   font-style: italic;
   flex-grow: 1;
   margin-bottom: 20px;
 }
+
 .testimonial-author {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--system-blue);
   align-self: flex-end;
 }
 
