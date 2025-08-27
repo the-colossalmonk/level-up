@@ -1,12 +1,13 @@
-# React + Vite
+# 🗡️ Level Up – Solo Leveling Themed Landing Page
+**Level Up** is a Solo Leveling-inspired landing page designed to collect user interest and feedback for an upcoming habit tracker app.  
+Built with speed and simplicity in mind.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## 🎯 Project Purpose
+This landing page serves as the **first touchpoint** for the **Level Up** habit tracker app.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Copyright © [the.colossalmonk] [2025]. All rights reserved.
+This code is proprietary and may not be copied, modified, distributed, or used in any form without explicit permission.
