@@ -379,36 +379,41 @@ p,
 /* Testimonials Section */
 .testimonials-scroller {
   max-width: 100%;
-  overflow: hidden; /* This hides the content that is outside the viewport */
-  /* This creates a soft edge on the sides for a fading effect */
-  -webkit-mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
-  mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
 }
-
 .testimonials-track {
   display: flex;
   gap: 30px;
-  width: max-content; /* Allows the track to be as wide as its content */
-  /* The animation itself */
+  width: max-content;
   animation: scroll 40s linear infinite;
 }
-
 .testimonials-track:hover {
-  animation-play-state: paused; /* Pauses the scroll on hover */
+  animation-play-state: paused;
 }
-
 @keyframes scroll {
   from {
     transform: translateX(0);
   }
   to {
-    /* This translates the track to the left by the width of the first set of testimonials */
     transform: translateX(calc(-100% / 2));
   }
 }
-
 .testimonial-card {
-  flex: 0 0 320px; /* Prevents cards from shrinking. Adjust width as needed. */
+  flex: 0 0 320px;
   background: var(--card-bg);
   border: 1px solid var(--border-glow);
   padding: 30px;
@@ -416,19 +421,12 @@ p,
   display: flex;
   flex-direction: column;
 }
-
 .testimonial-quote {
-  font-family: 'Cinzel', serif;
-  color: var(--text-secondary);
-  line-height: 1.7;
   font-style: italic;
   flex-grow: 1;
   margin-bottom: 20px;
 }
-
 .testimonial-author {
-  font-family: 'Orbitron', sans-serif;
-  color: var(--system-blue);
   align-self: flex-end;
 }
 
@@ -452,7 +450,6 @@ p,
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  font-family: "Cinzel", serif;
 }
 .faq-chevron {
   transition: transform 0.3s ease;
@@ -557,7 +554,6 @@ select {
   font-size: 1rem;
   box-sizing: border-box;
   transition: box-shadow 0.3s ease, border-color 0.3s ease;
-  font-family: "Cinzel", serif;
 }
 input:focus,
 select:focus {
@@ -585,16 +581,86 @@ select:focus {
 
 /* Responsive */
 @media (max-width: 768px) {
+  /* --- General Typography Adjustments --- */
   .hero-section h1 {
     font-size: 2.5rem;
+    min-height: auto;
+  }
+  .hero-section p {
+    font-size: 1.2rem;
   }
   .section-title {
-    font-size: 2rem;
+    font-size: 2.1rem;
+  }
+  .section-subtitle {
+    font-size: 1rem;
+  }
+  .path-step h3 {
+    font-size: 1.5rem;
+  }
+  .faq-question {
+    font-size: 1rem;
+  }
+
+  /* --- Spacing and Layout Adjustments --- */
+  .section {
+    padding: 60px 5%;
   }
   .mandate-grid {
     grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .mandate-text {
+    text-align: center;
+  }
+  .mandate-text .section-title,
+  .mandate-text .section-subtitle {
+    text-align: center;
+  }
+  .ascension-path {
+    padding-left: 30px;
+  }
+  .path-step::before {
+    left: -41px;
+  }
+
+  /* --- Component Specific Adjustments --- */
+  .header-content {
+    padding: 0 10px;
   }
   .logo span {
     display: none;
+  }
+  .hero-section .system-core {
+    width: 150px;
+    height: 150px;
+  }
+  .testimonial-card {
+    flex: 0 0 280px;
+  }
+  .modal-panel {
+    padding: 25px;
+    width: 95%;
+  }
+  .footer {
+    padding: 30px 5%;
+  }
+}
+
+/* Optional: Additional tweaks for very small screens */
+@media (max-width: 480px) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .system-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+  .ai-card,
+  .testimonial-card {
+    padding: 20px;
   }
 }
