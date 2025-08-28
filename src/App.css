@@ -11,15 +11,12 @@
   --border-glow: rgba(127, 0, 255, 0.5);
 }
 
-/* ========================================== */
-/* ===== BASE & MOBILE-FIRST STYLES ===== */
-/* ========================================== */
-
+/* Base and Typographic Hierarchy */
 body {
   margin: 0;
   background-color: var(--dungeon-black);
   color: var(--text-primary);
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel", serif; /* Default to the 'Lore' font */
   overflow-x: hidden;
   background-image: radial-gradient(
     rgba(127, 0, 255, 0.05) 1px,
@@ -41,7 +38,7 @@ label,
 .stat p,
 .rank,
 .testimonial-author {
-  font-family: "Orbitron", sans-serif;
+  font-family: "Orbitron", sans-serif; /* Use 'System' font for all UI text and headers */
 }
 
 p,
@@ -54,20 +51,19 @@ p,
 .footer p,
 .thank-you-message p,
 .testimonial-quote {
-  font-family: "Cinzel", serif;
+  font-family: "Cinzel", serif; /* Explicitly set 'Lore' font for all paragraphs */
 }
 
-/* Global Styles for Mobile */
+/* Global Styles */
 .section {
-  padding: 60px 5%;
-  max-width: 100%;
-  box-sizing: border-box;
+  padding: 100px 5%;
+  max-width: 1200px;
   margin: 0 auto;
-  opacity: 0;
-  transform: translateY(30px);
+  opacity: 0; /* Initially hidden for GSAP animation */
+  transform: translateY(50px);
 }
 .section-title {
-  font-size: 1.8rem;
+  font-size: 2.5rem;
   text-align: center;
   margin-bottom: 1rem;
   color: var(--system-blue);
@@ -76,9 +72,9 @@ p,
 .section-subtitle {
   text-align: center;
   color: var(--text-secondary);
-  font-size: 1rem;
-  max-width: 90%;
-  margin: 0 auto 40px auto;
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 60px auto;
 }
 
 /* Preloader */
@@ -97,17 +93,42 @@ p,
   animation: fadeOut 1s ease 2.5s forwards;
 }
 .preloader-core {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
   animation: breathe 2s ease-in-out infinite;
 }
 .preloader-text {
   margin-top: 1rem;
-  font-size: 1rem;
-  letter-spacing: 3px;
+  font-size: 1.2rem;
+  letter-spacing: 4px;
   color: var(--system-blue);
   text-shadow: 0 0 8px var(--system-blue);
   animation: flicker 1.5s infinite alternate;
+}
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 4px var(--system-blue), 0 0 11px var(--system-blue),
+      0 0 19px var(--system-blue);
+    color: var(--system-blue);
+  }
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+    color: #222;
+  }
 }
 
 /* Header */
@@ -116,37 +137,34 @@ p,
   top: 0;
   left: 0;
   width: 100%;
-  padding: 10px 5%;
+  padding: 15px 5%;
   background: rgba(16, 10, 29, 0.7);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-glow);
   z-index: 100;
-  box-sizing: border-box;
 }
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
   text-decoration: none;
   color: var(--text-primary);
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 .logo img {
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
 }
-.logo span {
-  display: none;
-} /* Hide text on mobile by default */
 .header-cta {
-  font-size: 0.8rem;
-  padding: 8px 16px;
+  font-size: 0.9rem;
+  padding: 10px 20px;
   background: none;
   border: 1px solid var(--system-blue);
   color: var(--system-blue);
@@ -161,41 +179,59 @@ p,
 
 /* Hero Section */
 .hero-section {
-  min-height: 90vh; /* Shorter height for mobile */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding-top: 0;
-  padding-bottom: 0;
 }
 .hero-section .system-core {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   animation: breathe 4s ease-in-out infinite;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scale(0.95);
+    filter: drop-shadow(0 0 15px var(--shadow-monarch-purple));
+  }
+  50% {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 30px var(--system-blue));
+  }
 }
 .hero-section h1 {
-  font-size: 2.2rem;
+  font-size: 3.5rem;
   margin-bottom: 1rem;
-  text-shadow: 0 0 10px var(--system-blue);
-  min-height: auto;
+  text-shadow: 0 0 15px var(--system-blue);
+  min-height: 5rem;
 }
 .typing-cursor {
   animation: blink 1s step-end infinite;
   color: var(--system-blue);
 }
+@keyframes blink {
+  from,
+  to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
 .hero-section p {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   color: var(--text-secondary);
   margin-bottom: 2rem;
 }
 
 /* System Button */
 .system-button {
-  padding: 0.8rem 1.8rem;
-  font-size: 1rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: white;
   text-transform: uppercase;
@@ -207,80 +243,78 @@ p,
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  box-shadow: 0 0 15px var(--shadow-monarch-purple);
+  box-shadow: 0 0 20px var(--shadow-monarch-purple);
   transition: all 0.3s ease;
 }
 .system-button:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 25px var(--system-blue);
+  box-shadow: 0 0 30px var(--system-blue);
 }
 
 /* Mandate Section */
 .mandate-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 40px;
-}
-.mandate-text,
-.mandate-text .section-title,
-.mandate-text .section-subtitle {
-  text-align: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
 }
 .mandate-body {
-  line-height: 1.6;
+  line-height: 1.7;
 }
 .feature-item {
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin-bottom: 20px;
+  gap: 20px;
+  margin-bottom: 30px;
 }
 .feature-item img {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   color: var(--system-blue);
 }
 .feature-item h3 {
   margin: 0 0 5px 0;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 .feature-item p {
   margin: 0;
-  font-size: 0.9rem;
 }
 
-/* AI Architect & Testimonials Cards */
-.ai-cards-grid,
-.testimonials-grid {
+/* AI Architect Section (Cards) */
+.ai-cards-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
 }
-.ai-card,
-.testimonial-card {
+.ai-card {
   background: var(--card-bg);
   border: 1px solid var(--border-glow);
-  padding: 25px;
+  padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(127, 0, 255, 0.2);
+  box-shadow: 0 0 20px rgba(127, 0, 255, 0.2);
   backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.ai-card:hover,
-.testimonial-card:hover {
-  transform: translateY(-5px);
+.ai-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(127, 0, 255, 0.4);
 }
 .ai-card-emoji {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: 20px;
   display: block;
+  text-shadow: 0 0 10px rgba(0, 209, 255, 0.7);
 }
 .ai-card h3 {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: var(--text-primary);
 }
-.ai-card p,
-.testimonial-quote {
-  line-height: 1.6;
+.ai-card p {
+  line-height: 1.7;
 }
 
 /* Shadow Army Section */
@@ -291,80 +325,117 @@ p,
     var(--dungeon-black) 70%
   );
 }
+.shadow-content {
+  text-align: center;
+}
 .shadow-icon {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 20px auto;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 30px auto;
   color: var(--shadow-monarch-purple);
-  filter: drop-shadow(0 0 10px var(--shadow-monarch-purple));
+  filter: drop-shadow(0 0 15px var(--shadow-monarch-purple));
 }
 
 /* Ascension Path Section */
 .ascension-path {
   position: relative;
-  margin-top: 40px;
-  padding-left: 30px;
+  margin-top: 50px;
+  padding-left: 50px;
   border-left: 2px solid var(--border-glow);
 }
 .path-step {
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 .path-step::before {
   content: "";
   position: absolute;
-  left: -41px;
+  left: -61px;
   top: 5px;
-  width: 12px;
-  height: 12px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background-color: var(--system-blue);
-  border: 3px solid var(--dungeon-black);
-  box-shadow: 0 0 8px var(--system-blue);
+  border: 4px solid var(--dungeon-black);
+  box-shadow: 0 0 10px var(--system-blue);
 }
 .path-step .rank {
-  padding: 4px 8px;
-  font-size: 0.8rem;
+  display: inline-block;
+  background: var(--border-glow);
+  color: var(--system-blue);
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
 .path-step h3 {
-  font-size: 1.3rem;
+  font-size: 1.8rem;
+  margin: 0 0 10px 0;
+}
+.path-step p {
+  line-height: 1.7;
+  margin: 0;
 }
 
-/* Testimonials Auto-Scroller */
+/* Testimonials Section */
 .testimonials-scroller {
   max-width: 100%;
-  overflow: hidden;
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent,
-    white 10%,
-    white 90%,
-    transparent
-  );
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    white 10%,
-    white 90%,
-    transparent
-  );
+  overflow: hidden; /* This hides the content that is outside the viewport */
+  /* This creates a soft edge on the sides for a fading effect */
+  -webkit-mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+  mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
 }
+
 .testimonials-track {
   display: flex;
-  gap: 20px;
-  width: max-content;
+  gap: 30px;
+  width: max-content; /* Allows the track to be as wide as its content */
+  /* The animation itself */
   animation: scroll 40s linear infinite;
 }
+
 .testimonials-track:hover {
-  animation-play-state: paused;
+  animation-play-state: paused; /* Pauses the scroll on hover */
 }
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* This translates the track to the left by the width of the first set of testimonials */
+    transform: translateX(calc(-100% / 2));
+  }
+}
+
 .testimonial-card {
-  flex: 0 0 280px;
-} /* Set a fixed width for mobile scrolling */
+  flex: 0 0 320px; /* Prevents cards from shrinking. Adjust width as needed. */
+  background: var(--card-bg);
+  border: 1px solid var(--border-glow);
+  padding: 30px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-quote {
+  font-family: 'Cinzel', serif;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-style: italic;
+  flex-grow: 1;
+  margin-bottom: 20px;
+}
+
+.testimonial-author {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--system-blue);
+  align-self: flex-end;
+}
 
 /* FAQ Section */
 .faq-container {
-  max-width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 .faq-item {
   border-bottom: 1px solid var(--border-glow);
@@ -373,13 +444,15 @@ p,
   width: 100%;
   background: none;
   border: none;
-  padding: 20px 5px;
+  padding: 25px 10px;
   text-align: left;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  color: var(--text-primary);
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  font-family: "Cinzel", serif;
 }
 .faq-chevron {
   transition: transform 0.3s ease;
@@ -396,69 +469,51 @@ p,
   max-height: 200px;
 }
 .faq-answer p {
-  padding: 0 5px 20px 5px;
+  padding: 0 10px 25px 10px;
   margin: 0;
 }
 
 /* Modal & Form */
 .modal-backdrop {
-  z-index: 200; /* ... other styles same */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(5, 2, 13, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .modal-panel {
-  padding: 25px;
+  position: relative;
+  max-width: 600px;
   width: 90%;
+  background: var(--card-bg);
+  border: 1px solid var(--border-glow);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 30px var(--shadow-monarch-purple);
+  text-align: center;
 }
 .close-button {
-  top: 10px;
-  right: 10px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
 }
-.stat h3 {
-  font-size: 2rem;
+.close-button img {
+  width: 24px;
+  height: 24px;
+  color: var(--text-secondary);
 }
-label {
-  font-size: 1rem;
-}
-
-/* Footer */
-.footer {
-  padding: 30px 5%;
-  text-align: center;
-  border-top: 1px solid var(--border-glow);
-  background: var(--card-bg);
-}
-.footer p {
-  margin: 5px 0;
-  font-size: 0.9rem;
-}
-
-/* Keyframe animations are universal */
-@keyframes scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(calc(-100% / 2));
-  }
-}
-@keyframes breathe {
-  0%,
-  100% {
-    transform: scale(0.95);
-    filter: drop-shadow(0 0 15px var(--shadow-monarch-purple));
-  }
-  50% {
-    transform: scale(1.05);
-    filter: drop-shadow(0 0 30px var(--system-blue));
-  }
-}
-@keyframes blink {
-  from,
-  to {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
+.modal-step {
+  animation: fadeInStep 0.5s ease-in-out;
 }
 @keyframes fadeInStep {
   from {
@@ -470,90 +525,76 @@ label {
     transform: translateY(0);
   }
 }
-
-/* ======================================================== */
-/* ===== TABLET & LARGER SCREENS (min-width: 768px) ===== */
-/* ======================================================== */
-
-@media (min-width: 768px) {
-  /* Enhance Typography and Spacing */
-  .section {
-    padding: 80px 5%;
-  }
-  .section-title {
-    font-size: 2.3rem;
-  }
-  .section-subtitle {
-    font-size: 1.1rem;
-  }
-  .hero-section h1 {
-    font-size: 3rem;
-  }
-  .hero-section p {
-    font-size: 1.3rem;
-  }
-
-  /* Restore Desktop Layouts */
-  .mandate-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .mandate-text,
-  .mandate-text .section-title,
-  .mandate-text .section-subtitle {
-    text-align: left;
-  }
-  .ai-cards-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  }
-
-  /* Refine Components */
-  .header-content {
-    padding: 0 10px;
-  }
-  .logo span {
-    display: inline-block;
-  }
-  .hero-section .system-core {
-    width: 180px;
-    height: 180px;
-  }
-  .testimonial-card {
-    flex-basis: 320px;
-  }
-  .faq-container {
-    max-width: 700px;
-  }
+.stat h3 {
+  color: var(--gold-rare);
+  font-size: 2.5rem;
+  margin: 0;
+  text-shadow: 0 0 5px var(--gold-rare);
+}
+.stat p {
+  margin: 0;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+label {
+  font-size: 1.1rem;
+  text-align: left;
+  color: var(--system-blue);
+}
+input,
+select {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background-color: var(--dungeon-black);
+  border: 1px solid var(--border-glow);
+  border-radius: 5px;
+  color: var(--text-primary);
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  font-family: "Cinzel", serif;
+}
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--system-blue);
+  box-shadow: 0 0 15px var(--system-blue);
+}
+.thank-you-message {
+  font-size: 1.5rem;
+  color: var(--gold-rare);
+  text-shadow: 0 0 8px var(--gold-rare);
 }
 
-/* ========================================================= */
-/* ===== DESKTOP & LARGER SCREENS (min-width: 1024px) ===== */
-/* ========================================================= */
+/* Footer */
+.footer {
+  padding: 40px 5%;
+  text-align: center;
+  border-top: 1px solid var(--border-glow);
+  background: var(--card-bg);
+}
+.footer p {
+  margin: 5px 0;
+  color: var(--text-secondary);
+}
 
-@media (min-width: 1024px) {
-  /* Final Polish for Large Screens */
-  .section {
-    padding: 100px 5%;
-  }
-  .section-title {
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-section h1 {
     font-size: 2.5rem;
   }
-  .section-subtitle {
-    font-size: 1.2rem;
+  .section-title {
+    font-size: 2rem;
   }
-  .hero-section {
-    min-height: 100vh;
+  .mandate-grid {
+    grid-template-columns: 1fr;
   }
-  .hero-section h1 {
-    font-size: 3.5rem;
-  }
-  .hero-section p {
-    font-size: 1.5rem;
-  }
-  .hero-section .system-core {
-    width: 200px;
-    height: 200px;
-  }
-  .faq-container {
-    max-width: 800px;
+  .logo span {
+    display: none;
   }
 }
