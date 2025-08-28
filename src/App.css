@@ -579,88 +579,138 @@ select:focus {
   color: var(--text-secondary);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  /* --- General Typography Adjustments --- */
-  .hero-section h1 {
-    font-size: 2.5rem;
-    min-height: auto;
-  }
-  .hero-section p {
-    font-size: 1.2rem;
-  }
-  .section-title {
-    font-size: 2.1rem;
-  }
-  .section-subtitle {
-    font-size: 1rem;
-  }
-  .path-step h3 {
-    font-size: 1.5rem;
-  }
-  .faq-question {
-    font-size: 1rem;
-  }
-
-  /* --- Spacing and Layout Adjustments --- */
+/* Responsive: Large tablets and below */
+@media (max-width: 1024px) {
   .section {
-    padding: 60px 5%;
+    padding: 70px 3%;
+    max-width: 98vw;
   }
+  .header-content {
+    max-width: 98vw;
+  }
+  .mandate-grid {
+    gap: 40px;
+  }
+  .ai-cards-grid {
+    gap: 20px;
+  }
+}
+
+/* Responsive: Tablets and below */
+@media (max-width: 900px) {
   .mandate-grid {
     grid-template-columns: 1fr;
     gap: 30px;
   }
-  .mandate-text {
-    text-align: center;
-  }
-  .mandate-text .section-title,
-  .mandate-text .section-subtitle {
-    text-align: center;
-  }
   .ascension-path {
-    padding-left: 30px;
+    padding-left: 20px;
   }
   .path-step::before {
-    left: -41px;
+    left: -31px;
   }
-
-  /* --- Component Specific Adjustments --- */
-  .header-content {
-    padding: 0 10px;
+  .ai-cards-grid {
+    grid-template-columns: 1fr;
   }
-  .logo span {
-    display: none;
-  }
-  .hero-section .system-core {
-    width: 150px;
-    height: 150px;
-  }
-  .testimonial-card {
-    flex: 0 0 280px;
-  }
-  .modal-panel {
-    padding: 25px;
-    width: 95%;
-  }
-  .footer {
-    padding: 30px 5%;
+  .testimonials-track {
+    gap: 15px;
   }
 }
 
-/* Optional: Additional tweaks for very small screens */
-@media (max-width: 480px) {
-  .hero-section h1 {
-    font-size: 2rem;
+/* Responsive: Mobile landscape and small tablets */
+@media (max-width: 600px) {
+  .section {
+    padding: 40px 2%;
   }
   .section-title {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
-  .system-button {
-    padding: 0.8rem 1.5rem;
+  .section-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+  }
+  .hero-section h1 {
+    font-size: 1.5rem;
+    min-height: unset;
+  }
+  .hero-section p {
     font-size: 1rem;
+  }
+  .hero-section .system-core {
+    width: 100px;
+    height: 100px;
+  }
+  .mandate-grid {
+    gap: 18px;
+  }
+  .feature-item img {
+    width: 28px;
+    height: 28px;
   }
   .ai-card,
   .testimonial-card {
-    padding: 20px;
+    padding: 12px;
+  }
+  .modal-panel {
+    padding: 12px;
+    width: 99%;
+  }
+  .footer {
+    padding: 18px 2%;
+  }
+  .stat h3 {
+    font-size: 1.3rem;
+  }
+  .faq-question {
+    font-size: 0.95rem;
+    padding: 18px 5px;
+  }
+  .faq-answer.open {
+    max-height: 120px;
+  }
+  .ascension-path {
+    padding-left: 10px;
+  }
+  .path-step h3 {
+    font-size: 1.1rem;
+  }
+  .path-step::before {
+    left: -21px;
+    width: 14px;
+    height: 14px;
+  }
+  .shadow-icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* Responsive: Small mobile screens */
+@media (max-width: 400px) {
+  .section {
+    padding: 20px 1%;
+  }
+  .section-title {
+    font-size: 1.1rem;
+  }
+  .system-button {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8rem;
+  }
+  .ai-card,
+  .testimonial-card {
+    padding: 8px;
+  }
+  .modal-panel {
+    padding: 6px;
+  }
+  .stat h3 {
+    font-size: 1rem;
+  }
+  .faq-question {
+    font-size: 0.8rem;
+    padding: 10px 2px;
+  }
+  .faq-answer.open {
+    max-height: 80px;
   }
 }
