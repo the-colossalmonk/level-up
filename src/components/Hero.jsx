@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SystemCore from '../assets/SystemCore.svg';
 
-// The useTypingEffect hook remains the same
 const useTypingEffect = (text, duration) => {
   const [typedText, setTypedText] = useState('');
   useEffect(() => {
@@ -23,13 +22,13 @@ const useTypingEffect = (text, duration) => {
 };
 
 export const Hero = ({ onRegisterClick }) => {
-  const typedHeadline = useTypingEffect("An Invitation to Level Up.", 1500);
+  const typedHeadline = useTypingEffect("The System has chosen you, time to Level Up.", 2000);
 
   return (
     <section className="hero-section section" style={{ opacity: 1, transform: 'none' }}>
       <img src={SystemCore} alt="System Core" className="system-core" />
       <h1>{typedHeadline}<span className="typing-cursor">_</span></h1>
-      <p>The next generation of habit formation is coming. Be the first to experience it.</p>
+      <p>An intelligent habit-building system inspired by the ultimate growth journey. Join the waitlist for your invitation.</p>
       <button onClick={onRegisterClick} className="system-button">
         Request Early Access
       </button>

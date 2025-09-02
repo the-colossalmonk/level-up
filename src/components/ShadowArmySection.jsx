@@ -6,9 +6,9 @@ export const ShadowArmySection = () => {
     <section className="section shadow-section">
       <div className="shadow-content">
         <img src={ShadowArmyIcon} alt="Shadow Army Icon" className="shadow-icon" />
-        <h2 className="section-title">Forge Your Automated Self</h2>
+        <h2 className="section-title">Your Shadow Army Awaits</h2>
         <p className="section-subtitle">
-          Every habit you master with Arise becomes an automated part of your life—a 'shadow soldier' working for you. Build an army of discipline that operates on instinct, freeing your focus for the next big challenge.
+          In the Level Up system, every mastered habit becomes an automated skill—a 'shadow soldier' in your personal army of discipline. Forge a force that works for you, even when you're not thinking about it.
         </p>
       </div>
     </section>
