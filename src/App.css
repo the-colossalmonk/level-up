@@ -386,6 +386,7 @@ p,
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  font-family: "Cinzel", serif;
 }
 .faq-chevron {
   transition: transform 0.3s ease;
@@ -449,6 +450,14 @@ p,
 .modal-step {
   animation: fadeInStep 0.5s ease-in-out;
 }
+.stat h3 {
+  color: var(--gold-rare);
+  text-shadow: 0 0 5px var(--gold-rare);
+}
+.stat p {
+  color: var(--gold-rare);
+  text-shadow: 0 0 5px var(--gold-rare);
+}
 form {
   display: flex;
   flex-direction: column;
@@ -465,6 +474,7 @@ select {
   border-radius: 5px;
   color: var(--text-primary);
   font-size: 1rem;
+  font-family: "Cinzel", serif;
 }
 .thank-you-message {
   color: var(--gold-rare);
