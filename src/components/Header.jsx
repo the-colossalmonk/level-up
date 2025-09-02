@@ -7,10 +7,10 @@ export const Header = ({ onRegisterClick }) => {
       <div className="header-content">
         <a href="#" className="logo">
           <img src={SystemCore} alt="System Core Logo" />
-          <span>Project: Level Up</span>
+          <span>Arise</span>
         </a>
         <button onClick={onRegisterClick} className="header-cta">
-          Join The Registry
+          Join the Waitlist
         </button>
       </div>
     </header>

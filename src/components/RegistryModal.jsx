@@ -1,57 +1,41 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { supabase } from '../supabaseClient';
 import CloseIcon from '../assets/icons/Close.svg';
 import gsap from 'gsap';
+// (useState and useEffect are also imported from React)
+import { useState, useEffect } from 'react';
+
 
 export const RegistryModal = ({ onClose }) => {
   const [step, setStep] = useState('info'); // 'info', 'form', 'success'
   const [hunterCount, setHunterCount] = useState(0);
-
-  // Form State
   const [formData, setFormData] = useState({ name: '', email: '', primary_goal: 'Strength' });
   const [error, setError] = useState('');
 
-  // Step 1: Fetch data for the Info Panel
   useEffect(() => {
     const getInterestCount = async () => {
       const { data, error } = await supabase
         .from('interest_counter').select('count').eq('id', 1).single();
-      
-      if (error) {
-        console.error("Supabase fetch error:", error);
-        return;
-      }
-
+      if (error) { console.error("Supabase fetch error:", error); return; }
       if (data) {
         gsap.to({ val: hunterCount }, {
           val: data.count,
           duration: 2,
           ease: 'power2.out',
-          onUpdate: function() {
-            setHunterCount(Math.round(this.targets()[0].val));
-          }
+          onUpdate: function() { setHunterCount(Math.round(this.targets()[0].val)); }
         });
       }
     };
     getInterestCount();
   }, []);
 
-  // Step 2: Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
-
-    // Call 1: Insert the new user into the 'subscribers' table
     const { error: insertError } = await supabase.from('subscribers').insert([formData]);
-    if (insertError) {
-      setError('This Hunter is already registered.');
-      return;
-    }
-    
-    // Call 2: Increment the counter using the server-side RPC function
+    if (insertError) { setError('This Hunter is already registered.'); return; }
     await supabase.rpc('increment_interest', { row_id: 1 });
-    
-    setStep('success'); // Move to the success message
+    setStep('success');
   };
 
   return (
@@ -63,21 +47,21 @@ export const RegistryModal = ({ onClose }) => {
 
         {step === 'info' && (
           <div className="modal-step">
-            <h2 className="section-title" style={{ marginTop: 0 }}>[ System Status ]</h2>
+            <h2 className="section-title" style={{ marginTop: 0 }}>[ Join the Vanguard ]</h2>
             <div className="stat" style={{margin: '40px 0'}}>
               <h3>{hunterCount}</h3>
-              <p>Hunters Currently in the Registry</p>
+              <p>Hunters Awaiting Activation</p>
             </div>
-            <p className="section-subtitle" style={{fontSize: '1rem'}}>The System is expanding. Your potential is limitless. Join the ranks.</p>
+            <p className="section-subtitle" style={{fontSize: '1rem'}}>The registry is now open for early access invitations. Be among the first to gain access.</p>
             <button className="system-button" onClick={() => setStep('form')}>
-              Proceed to Registry
+              Join the Waitlist
             </button>
           </div>
         )}
 
         {step === 'form' && (
           <div className="modal-step">
-            <h2 className="section-title" style={{ marginTop: 0 }}>[ Hunter's Registry ]</h2>
+            <h2 className="section-title" style={{ marginTop: 0 }}>[ Secure Your Spot ]</h2>
             <form onSubmit={handleSubmit}>
               <label htmlFor="name">Your Title [Name]</label>
               <input type="text" id="name" name="name" required value={formData.name} onChange={(e) => setFormData({...formData, name: e.target.value})} />
@@ -90,15 +74,15 @@ export const RegistryModal = ({ onClose }) => {
                 <option value="Agility">Agility (Consistency)</option>
               </select>
               {error && <p style={{color: '#ff4d4d', textAlign: 'center', fontFamily: 'Cinzel, serif'}}>{error}</p>}
-              <button type="submit" className="system-button">[ ARISE ]</button>
+              <button type="submit" className="system-button">[ Join Waitlist ]</button>
             </form>
           </div>
         )}
 
         {step === 'success' && (
           <div className="thank-you-message">
-            <h3>Registration Complete</h3>
-            <p>Your hunter registration process has been completed. The System acknowledges your will. Stand by for your awakening.</p>
+            <h3>Your Spot is Secured!</h3>
+            <p>The System has acknowledged your request. We'll be in touch with your invitation soon. Welcome, Hunter.</p>
           </div>
         )}
       </div>

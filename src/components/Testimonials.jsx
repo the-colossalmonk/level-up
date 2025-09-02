@@ -2,32 +2,28 @@ import React from 'react';
 
 const testimonialsData = [
   {
-    quote: "After a chat with the creator, I'm convinced this isn't just another app. The vision for the AI Architect is unlike anything I've seen. I've been waiting for a tool that truly understands the growth mindset. Consider me first in line.",
-    author: "— Kai, Tech Enthusiast"
+    quote: "I saw a private demo of the AI quest system and was blown away. This is the first habit app that seems to actually *get* the psychology of motivation. I'm on the waitlist and checking my email daily.",
+    author: "— Kai, Early Look"
   },
   {
-    quote: "The way they've integrated the 'Solo Leveling' theme is brilliant. It's not just a gimmick; the core mechanics of the 'System' are actually designed to make you level up in real life. The launch can't come soon enough.",
-    author: "— Lena, Product Designer"
+    quote: "The 'Solo Leveling' theme is what drew me in, but the vision the team shared is what made me stay. They're building a serious tool for personal growth. Can't wait for launch day.",
+    author: "— Lena, Product Preview"
   },
   {
-    quote: "I was skeptical at first, but hearing the architectural plan for the AI changed my mind. It's designed to be a partner, not just a passive tracker. This is the exact motivation I need.",
-    author: "— Marcus, Fitness Coach"
+    quote: "Finally, a dev team that understands that a list of checkboxes isn't enough. The concept of an adaptive system that grows with you is exactly what's been missing. The launch can't come soon enough.",
+    author: "— Marcus, Pre-Launch Insider"
   },
   {
-    quote: "Finally, someone is building what we've all been thinking about. A habit tracker that adapts and pushes you. I've already cleared a spot on my homescreen for it.",
-    author: "— Chloe, University Student"
-  },
-  {
-    quote: "The passion behind this project is contagious. They're solving a real problem with a creative and powerful solution. I'm excited to see my personal 'Shadow Army' of habits come to life.",
-    author: "— David, Software Engineer"
+    quote: "Signed up for the waitlist the second I saw the landing page. The idea of turning my goals into a real-life leveling journey is just... perfect. Eagerly awaiting my invitation.",
+    author: "— Chloe, Future Hunter"
   }
 ];
 
 export const Testimonials = () => {
   return (
     <section className="section">
-      <h2 className="section-title">[ Dispatches from the Front Line ]</h2>
-      <p className="section-subtitle">Early intel from hunters who have conferred with the System's Architect.</p>
+      <h2 className="section-title">[ Hunters Are Gathering ]</h2>
+      <p className="section-subtitle">The word is out. Here’s what people are saying ahead of the launch.</p>
       <div className="testimonials-scroller">
         <div className="testimonials-track">
           {testimonialsData.map((testimonial, index) => (
@@ -44,14 +40,6 @@ export const Testimonials = () => {
           ))}
         </div>
       </div>
-      {/* <div className="testimonials-container">
-        {testimonialsData.map((testimonial, index) => (
-          <div className="testimonial-card" key={index}>
-            <p className="testimonial-quote">{testimonial.quote}</p>
-            <span className="testimonial-author">{testimonial.author}</span>
-          </div>
-        ))}
-      </div> */}
     </section>
   );
 };

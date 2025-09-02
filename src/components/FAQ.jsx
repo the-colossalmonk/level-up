@@ -3,19 +3,20 @@ import ChevronDown from '../assets/icons/ChevronDown.svg';
 
 const faqData = [
   {
-    question: "Is this just another habit tracker?",
-    answer: "No. While it tracks habits, its core is the AI Architect that provides personalized, evolving challenges. It's a growth system, not a passive logbook."
+    question: "What exactly is Arise?",
+    answer: "Arise is an intelligent habit-building application currently in the final stages of development. We are inviting users to join our early access waitlist to be the first to experience it."
   },
   {
-    question: "How does the AI work?",
-    answer: "The AI analyzes your successes and failures to understand your unique psychological profile. It then generates 'quests' designed to target your specific weaknesses and accelerate your strengths, much like a personal coach."
+    question: "When will the app launch?",
+    answer: "We are targeting a launch soon! By joining the waitlist, you'll be the first to know the official date and will receive an invitation to access the app before the general public."
   },
   {
-    question: "What does 'joining the registry' mean?",
-    answer: "By joining, you are signing up for early access and becoming part of our founding cohort of 'Hunters.' You'll receive exclusive updates and the opportunity to shape the future of the System."
+    question: "Is joining the waitlist free?",
+    answer: "Yes, joining the waitlist is completely free. Waitlist members will also receive an exclusive introductory offer as a thank you for their early support when we launch."
   }
 ];
 
+// The FAQItem component remains the same
 const FAQItem = ({ item, isOpen, onClick }) => {
   return (
     <div className="faq-item">
@@ -39,7 +40,7 @@ export const FAQ = () => {
 
   return (
     <section className="section">
-      <h2 className="section-title">[ System Codex ]</h2>
+      <h2 className="section-title">[ Mission Briefing ]</h2>
       <p className="section-subtitle">Key intelligence for aspiring Hunters.</p>
       <div className="faq-container">
         {faqData.map((item, index) => (

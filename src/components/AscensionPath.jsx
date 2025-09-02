@@ -3,25 +3,25 @@ import React from 'react';
 export const AscensionPath = () => {
   return (
     <section className="section">
-      <h2 className="section-title">[ Your Ascension Path ]</h2>
+      <h2 className="section-title">[ The Path to Mastery ]</h2>
       <p className="section-subtitle">
-        Your journey is a climb through the ranks. Each completed quest grants experience, honing your skills and unlocking greater challenges and rewards.
+        Growth isn't a single event; it's a journey. Arise is structured to guide you from your first step to ultimate mastery.
       </p>
       <div className="ascension-path">
         <div className="path-step">
-          <div className="rank">E-RANK</div>
-          <h3>The Awakening</h3>
-          <p>Begin with foundational 'Daily Quests' to build discipline and consistency. The first step is the most crucial.</p>
+          <div className="rank">FOUNDATION</div>
+          <h3>Establish Your Baseline</h3>
+          <p>Begin with core daily quests designed for maximum consistency and building initial momentum.</p>
         </div>
         <div className="path-step">
-          <div className="rank">C-RANK</div>
-          <h3>Unlocking Potential</h3>
-          <p>As you level up, the AI introduces 'Job-Specific Quests' targeting your core goals, whether in fitness, learning, or career.</p>
+          <div className="rank">MOMENTUM</div>
+          <h3>Unlock Your Potential</h3>
+          <p>Advance to specialized challenges targeting your specific goals, from fitness to learning new skills.</p>
         </div>
         <div className="path-step">
-          <div className="rank">S-RANK</div>
-          <h3>Monarch of Habits</h3>
-          <p>Achieve a state of automatic excellence. Your habits are now an integrated part of your identity, a source of immense power.</p>
+          <div className="rank">MASTERY</div>
+          <h3>Integrate Your Habits</h3>
+          <p>Reach a state where your best habits are second nature, fully integrated into your identity.</p>
         </div>
       </div>
     </section>

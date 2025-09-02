@@ -8,34 +8,34 @@ export const Mandate = () => {
     <section className="section">
       <div className="mandate-grid">
         <div className="mandate-text">
-          <h2 className="section-title" style={{textAlign: 'left'}}>The Hunter's Mandate</h2>
+          <h2 className="section-title" style={{textAlign: 'left'}}>Beyond the Checklist</h2>
           <p className="section-subtitle" style={{textAlign: 'left', margin: '0 0 20px 0'}}>
-            Standard habit trackers merely observe. They are passive spectators. Our System is an active participant in your growth, designed to push you beyond your self-imposed limits.
+            Tired of habit trackers that feel like a chore? We're building something different—a partner in your growth, not just a passive logbook.
           </p>
           <p className="mandate-body">
-            This isn't about checking boxes. It's about tangible, measurable growth. We provide the structure and the challenge; you provide the will to conquer it.
+            Arise is an intelligent system designed to learn your patterns, craft personalized challenges, and turn your ambitions into achievements. It's time for a tool that works as hard as you do.
           </p>
         </div>
         <div className="mandate-features">
           <div className="feature-item">
             <img src={SwordIcon} alt="Sword" />
             <div>
-              <h3>Conquer Challenges</h3>
-              <p>Engage with active quests that push your boundaries.</p>
+              <h3>Intelligent Quests</h3>
+              <p>Personalized challenges created by our AI to target your goals.</p>
             </div>
           </div>
           <div className="feature-item">
             <img src={ShieldIcon} alt="Shield" />
             <div>
-              <h3>Build Resilience</h3>
-              <p>Develop defensive habits that protect your progress.</p>
+              <h3>Build Momentum</h3>
+              <p>Track your streaks and build unstoppable daily consistency.</p>
             </div>
           </div>
           <div className="feature-item">
             <img src={StatsIcon} alt="Stats" />
             <div>
-              <h3>Level Up Your Stats</h3>
-              <p>Watch your real-world attributes grow with every success.</p>
+              <h3>Visualize Your Growth</h3>
+              <p>Watch your real-life stats improve with every quest completed.</p>
             </div>
           </div>
         </div>

@@ -3,25 +3,25 @@ import React from 'react';
 export const AiArchitect = () => {
   return (
     <section className="section">
-      <h2 className="section-title">[ The AI Architect ]</h2>
+      <h2 className="section-title">[ Meet Your Personal Architect ]</h2>
       <p className="section-subtitle">
-        Just as 'The System' gave Sung Jinwoo the precise quests needed to evolve, our AI does the same for your life. It is your personal architect of growth.
+        Inspired by the ultimate leveling system, our AI doesn't just track—it guides. It's the core of Arise, built to ensure you never face a plateau alone.
       </p>
       <div className="ai-cards-grid">
         <div className="ai-card">
           <span className="ai-card-emoji">🧠</span>
-          <h3>Weakness Analysis</h3>
-          <p>The AI identifies where you falter and generates 'Penalty Quests' to fortify those exact areas, turning weaknesses into strengths.</p>
+          <h3>Learn & Adapt</h3>
+          <p>Our AI learns your unique strengths and weaknesses to create a truly personalized path forward.</p>
         </div>
         <div className="ai-card">
           <span className="ai-card-emoji">📜</span>
-          <h3>Personalized Quests</h3>
-          <p>Receive daily and weekly quests tailored to your ultimate goals. No generic advice—only a direct, optimized path to your best self.</p>
+          <h3>Crafted Challenges</h3>
+          <p>Receive daily and weekly 'quests' that are challenging but achievable, designed to build momentum.</p>
         </div>
         <div className="ai-card">
           <span className="ai-card-emoji">🚨</span>
-          <h3>Predictive Alerts</h3>
-          <p>The System learns your patterns and warns you of potential failure points before they happen, giving you the chance to overcome them.</p>
+          <h3>Stay Ahead</h3>
+          <p>Arise anticipates potential setbacks and provides strategies to keep you on track towards your goals.</p>
         </div>
       </div>
     </section>
