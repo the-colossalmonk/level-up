@@ -22,7 +22,7 @@ const useTypingEffect = (text, duration) => {
 };
 
 export const Hero = ({ onRegisterClick }) => {
-  const typedHeadline = useTypingEffect("The System has chosen you, time to Level Up.", 2000);
+  const typedHeadline = useTypingEffect("The System has chosen you, it is time to Level Up. Do you accept?", 2000);
 
   return (
     <section className="hero-section section" style={{ opacity: 1, transform: 'none' }}>
