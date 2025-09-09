@@ -26,6 +26,9 @@ export const Hero = ({ onRegisterClick }) => {
 
   return (
     <section className="hero-section section" style={{ opacity: 1, transform: 'none' }}>
+      <div className='bg-white'>
+        Test
+      </div>
       <img src={SystemCore} alt="System Core" className="system-core" />
       <h1>{typedHeadline}<span className="typing-cursor">_</span></h1>
       <p>An intelligent habit-building system inspired by the ultimate growth journey. Join the waitlist for your invitation.</p>
